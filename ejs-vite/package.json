@@ -1,0 +1,17 @@
+{
+  "name": "ejs-vite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node compile-ejs.js && vite",
+    "build": "node compile-ejs.js && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.2.0"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9"
+  }
+}
