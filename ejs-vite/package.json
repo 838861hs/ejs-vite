@@ -4,14 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node compile-ejs.js && vite",
-    "build": "node compile-ejs.js && vite build",
-    "preview": "vite preview"
+    "dev": "concurrently \"vite\" \"node compile-ejs.js\"",
+    "build": "echo 'Define your build step'"
   },
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "vite": "^5.2.0"
   },
   "dependencies": {
+    "chokidar": "^3.6.0",
     "ejs": "^3.1.9"
   }
 }
