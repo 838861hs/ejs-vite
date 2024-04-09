@@ -1,3 +1,1 @@
-import '../scss/style.scss';
-
-alert('test')
+console.log('2')

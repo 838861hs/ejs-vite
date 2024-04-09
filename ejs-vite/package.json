@@ -4,13 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"vite\" \"node compile-ejs.js\" \"node watch-scss.js\"",
-    "build": "vite build"
+    "dev": "concurrently \"vite\" \"node compile-ejs.js\" \"node watch-scss.js\" \"node watch-js.js\" \"node copy-images.js\"",
+    "build": "vite build",
+    "copy:images": "node copy-images.js"
   },
   "devDependencies": {
     "concurrently": "^8.2.2",
+    "esbuild": "^0.20.2",
+    "fs-extra": "^11.2.0",
     "sass": "^1.74.1",
-    "vite": "^5.2.0"
+    "vite": "^5.2.0",
+    "vite-plugin-copy": "^0.1.6"
   },
   "dependencies": {
     "chokidar": "^3.6.0",

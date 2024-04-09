@@ -1,17 +1,26 @@
+// Viteの設定関数とpathモジュールをインポート
 import { defineConfig } from 'vite';
 import path from 'path';
+// vite-plugin-copy を名前付きインポート
+import { copy } from 'vite-plugin-copy';
 
 export default defineConfig({
-  // 開発サーバーのルートを dist ディレクトリに設定
+  // 開発サーバーの設定
   root: path.resolve(__dirname, 'dist'),
   server: {
-    // 開発中はデフォルトポート（例えば 3000）を使用
     port: 3000,
-    // サーバー起動時にブラウザを自動で開く
     open: true,
     watch: {
-      // ポーリングを使用してファイルシステムの変更を検出（必要に応じて）
       usePolling: true,
     },
   },
+  // プラグインの設定
+  plugins: [
+    // src/imagesディレクトリの内容をdist/imagesにコピーする設定
+    copy({
+      targets: [
+        { src: 'src/images/*', dest: 'dist/images' }
+      ]
+    })
+  ]
 });
